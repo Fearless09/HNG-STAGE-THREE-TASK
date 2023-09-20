@@ -1,0 +1,9 @@
+Project name: HNGx Stage Three
+
+Project ID: hngx-stage-three
+
+Project number: 654012203951
+
+Default GCP resource location: Not yet selected
+
+Web API Key: AIzaSyDIzAbHtMSizLb9HkG4ZKvDlu-3bOJ59wo
