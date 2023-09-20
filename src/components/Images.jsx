@@ -20,8 +20,9 @@ function Images({ data, setData }) {
 
     return (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-14 gap-y-10 mt-5 px-3">
-            {data &&
-                <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd} >
+            {data.length == 0 ?
+                <p className='text-xl font-semibold'>No Image Found</p>
+                : <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd} >
                     <SortableContext items={data} strategy={rectSwappingStrategy} >
                         {data.map((data) => (
                             <ImageContainer key={data.id} data={data} />
