@@ -37,7 +37,7 @@ function Search() {
             <NavSpace />
             {isLoading && <Loading />}
             <div className="container mx-auto">
-                <h1 className='text-2xl text-slate-800 font-medium'>Showing results of <span className='font-bold uppercase'>{tag}</span></h1>
+                <h1 className='text-2xl text-slate-800 font-medium px-3'>Showing results of <span className='font-bold uppercase'>{tag}</span></h1>
                 <Images data={data} setData={setData} />
             </div>
             <Footer />

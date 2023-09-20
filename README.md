@@ -1,8 +1,11 @@
-# React + Vite
+### This website is developed using Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# To run this website locally, follow the following steps
+- 1.    Install all the packages and dependences
+`npm install`
 
-Currently, two official plugins are available:
+- 2.    Start the website locally
+`npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+#### Designed and Developed by Opeyemi_dev
