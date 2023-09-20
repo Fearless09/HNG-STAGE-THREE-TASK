@@ -2,10 +2,13 @@
   "name": "stage-three",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://Fearless09.github.io/HNG-STAGE-THREE-TASK",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
