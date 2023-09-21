@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -9,12 +10,14 @@ import ImageGallery from './page/ImageGallery'
 import ImageDetils from './page/ImageDetils'
 
 function App() {
+  const [loginMessage, setLoginMessage] = useState('')
+
 
   return (
     <>
       <Routes>
         <Route index element={
-          <ImageGallery />
+          <ImageGallery loginMessage={loginMessage} setLoginMessage={setLoginMessage} />
         } />
 
         <Route path='/search/:tag' element={
@@ -26,11 +29,11 @@ function App() {
         } />
 
         <Route path='/signin' element={
-          <Signin />
+          <Signin loginMessage={loginMessage} setLoginMessage={setLoginMessage} />
         } />
 
         <Route path='/signup' element={
-          <SignUp />
+          <SignUp loginMessage={loginMessage} setLoginMessage={setLoginMessage} />
         } />
       </Routes>
     </>

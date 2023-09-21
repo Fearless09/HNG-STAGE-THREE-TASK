@@ -14,7 +14,7 @@ function Navbar() {
         }
     }
     return (
-        <nav className='fixed px-2 py-4 md:px-4 w-screen top-0 left-0 bg-[rgba(23,37,84,0.85)] text-white z-50'>
+        <nav className='fixed px-2 py-4 md:px-4 w-screen top-0 left-0 bg-[rgba(23,37,84,0.85)] text-white z-20'>
             <div className="container mx-auto flex items-center justify-between gap-4">
                 {/* Brand Icon */}
                 <Link to={'/'}>

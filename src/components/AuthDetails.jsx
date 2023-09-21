@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FaUserAlt } from 'react-icons/fa'
 import { auth } from '../firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { FaUserAlt } from 'react-icons/fa'
 
 function AuthDetails() {
     const [authUser, setAuthUser] = useState(null)

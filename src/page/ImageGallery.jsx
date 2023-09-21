@@ -5,7 +5,7 @@ import Images from '../components/Images'
 import Loading from '../components/Loading'
 import Footer from '../components/Footer'
 
-function ImageGallery() {
+function ImageGallery({ loginMessage, setLoginMessage }) {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
@@ -18,19 +18,23 @@ function ImageGallery() {
             .then(response => response.json())
             .then(response => {
                 setData(response.photos)
-                // console.log(response.photos)
                 setIsLoading(false)
             })
             .catch(error => {
                 console.log('error', error)
                 setIsLoading(false)
             });
+
+        setTimeout(() => {
+            setLoginMessage('')
+        }, 2000)
     }, [])
 
     return (
         <div>
             <Navbar />
             <NavSpace />
+            {loginMessage && <div className='absolute top-2 left-[50%] translate-x-[-50%] bg-green-600 rounded-md p-5 text-white font-semibold text-lg flex justify-center items-center z-30'>{loginMessage}</div>}
             {isLoading && <Loading />}
             <div className="container mx-auto">
                 <h1 className='text-center text-4xl font-medium uppercase'>Image Gallery</h1>
