@@ -2,7 +2,7 @@ import React from 'react'
 
 import ImageContainer from './ImageContainer'
 import { DndContext, closestCenter } from '@dnd-kit/core'
-import { SortableContext, arrayMove, rectSwappingStrategy } from '@dnd-kit/sortable'
+import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable'
 
 function Images({ data, setData }) {
 
@@ -23,7 +23,7 @@ function Images({ data, setData }) {
             {data.length == 0 ?
                 <p className='text-xl font-semibold'>No Image Found</p>
                 : <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd} >
-                    <SortableContext items={data} strategy={rectSwappingStrategy} >
+                    <SortableContext items={data} strategy={rectSortingStrategy} >
                         {data.map((data) => (
                             <ImageContainer key={data.id} data={data} />
                         ))}

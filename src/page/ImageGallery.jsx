@@ -10,7 +10,7 @@ function ImageGallery({ loginMessage, setLoginMessage }) {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setIsLoading(true)
-        fetch("https://api.pexels.com/v1/search?query=nature", {
+        fetch("https://api.pexels.com/v1/search?query=vacations", {
             headers: {
                 Authorization: 'goBwQ9Fs2vDkausrHnIZ8f4wshD54sOLm5qdXFkcp9zsHGP0GJVRxB7n'
             }

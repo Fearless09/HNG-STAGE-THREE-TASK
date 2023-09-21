@@ -22,7 +22,6 @@ function Search() {
             .then(response => response.json())
             .then(response => {
                 setData(response.photos)
-                console.log(response.photos)
                 setIsLoading(false)
             })
             .catch(error => {
