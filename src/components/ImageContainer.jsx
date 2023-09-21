@@ -13,10 +13,10 @@ function ImageContainer({ data }) {
 
     return (
         <div className='rounded-md border pb-3 overflow-hidden' ref={setNodeRef} {...attributes} {...listeners} style={style} >
+            <img src={data.src.portrait} alt={data.alt} />
             <Link to={`/image-details/${data.id}`}>
-                <img src={data.src.portrait} alt={data.alt} />
+                <h3 className='mt-1 px-1 font-medium hover:text-blue-600'>{data.alt}</h3>
             </Link>
-            <h3 className='mt-1 px-1 font-medium'>{data.alt}</h3>
         </div>
     )
 }
