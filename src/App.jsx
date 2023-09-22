@@ -8,6 +8,7 @@ import SignUp from './page/SignUp'
 import Search from './page/Search'
 import ImageGallery from './page/ImageGallery'
 import ImageDetils from './page/ImageDetils'
+import ScrollTopBtn from './components/ScrollTopBtn'
 
 function App() {
   const [loginMessage, setLoginMessage] = useState('')
@@ -36,6 +37,7 @@ function App() {
           <SignUp loginMessage={loginMessage} setLoginMessage={setLoginMessage} />
         } />
       </Routes>
+      <ScrollTopBtn />
     </>
   )
 }

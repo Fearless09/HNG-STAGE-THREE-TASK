@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FaImages } from 'react-icons/fa6'
 import { BsSearch } from 'react-icons/bs'
-import { Link , useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthDetails from './AuthDetails'
 
 function Navbar() {
@@ -13,8 +13,25 @@ function Navbar() {
             navigate(`/search/${searchData}`)
         }
     }
+
+    const [scrolling, setScrolling] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setScrolling(prevScrollPos < currentScrollPos);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [prevScrollPos]);
+
     return (
-        <nav className='fixed px-2 py-4 md:px-4 w-screen top-0 left-0 bg-[rgba(23,37,84,0.85)] text-white z-20'>
+        <nav className={`${scrolling ? 'hidden' : 'fixed px-2 py-4 md:px-4 w-screen top-0 left-0 bg-[rgba(23,37,84,0.85)] text-white z-20'}`}>
             <div className="container mx-auto flex items-center justify-between gap-4">
                 {/* Brand Icon */}
                 <Link to={'/'}>
