@@ -10,6 +10,10 @@ function ImageGallery({ loginMessage, setLoginMessage }) {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setIsLoading(true)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
         fetch("https://api.pexels.com/v1/search?query=vacations", {
             headers: {
                 Authorization: 'goBwQ9Fs2vDkausrHnIZ8f4wshD54sOLm5qdXFkcp9zsHGP0GJVRxB7n'
@@ -27,7 +31,7 @@ function ImageGallery({ loginMessage, setLoginMessage }) {
 
         setTimeout(() => {
             setLoginMessage('')
-        }, 2000)
+        }, 2500)
     }, [])
 
     return (

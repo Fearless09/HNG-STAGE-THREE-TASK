@@ -14,6 +14,10 @@ function Search() {
 
     useEffect(() => {
         setIsLoading(true)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
         fetch(`https://api.pexels.com/v1/search?query=${tag}`, {
             headers: {
                 Authorization: 'goBwQ9Fs2vDkausrHnIZ8f4wshD54sOLm5qdXFkcp9zsHGP0GJVRxB7n'

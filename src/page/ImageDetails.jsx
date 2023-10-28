@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import NavSpace from '../components/NavSpace'
 import Footer from '../components/Footer'
 import Loading from '../components/Loading'
+import { HiOutlineDownload } from 'react-icons/hi'
 
 function ImageDetils() {
     const { imageID } = useParams()
@@ -12,6 +13,10 @@ function ImageDetils() {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setIsLoading(true)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
         fetch(`https://api.pexels.com/v1/photos/${imageID}`, {
             headers: {
                 Authorization: 'goBwQ9Fs2vDkausrHnIZ8f4wshD54sOLm5qdXFkcp9zsHGP0GJVRxB7n'
@@ -44,7 +49,9 @@ function ImageDetils() {
                         {data.src && <>
                             {Object.entries(data.src).map(([size, img], indx) => (
                                 <div className='mb-10' key={indx}>
-                                    <h1 className='font-normal text-xl mb-1'>Size: <span className='font-bold capitalize'>{size}</span></h1>
+                                    <h1 className='font-normal text-xl mb-1'>Size: <span className='font-bold capitalize'>{size}</span> <a href={img} className='inline-flex text-blue-700 hover:text-orange-700 relative top-[2px]' download={true} target='_blank'>
+                                        <HiOutlineDownload />
+                                    </a></h1>
                                     <img src={img} className='mx-auto' alt={data.alt} />
 
                                 </div>
